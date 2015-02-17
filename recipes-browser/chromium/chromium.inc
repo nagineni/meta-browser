@@ -18,7 +18,7 @@
 
 DESCRIPTION = "Chromium browser"
 LICENSE = "BSD"
-DEPENDS = "xz-native pciutils pulseaudio cairo nss zlib-native libav libgnome-keyring cups ninja-native gconf libexif pango libdrm"
+DEPENDS = "xz-native pciutils pulseaudio cairo nss zlib-native libav cups ninja-native gconf libexif pango libdrm"
 SRC_URI = "\
         http://gsdview.appspot.com/chromium-browser-official/${P}.tar.xz \
         file://include.gypi \
