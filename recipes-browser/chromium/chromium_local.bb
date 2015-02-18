@@ -7,7 +7,12 @@ SRC_URI = "\
         ${@bb.utils.contains('PACKAGECONFIG', 'component-build', 'file://component-build.gypi', '', d)} \
         file://google-chrome \
         file://google-chrome.desktop \
-"
+        "
+
+EXTRA_OEGYP += "\
+        -Dlinux_use_bundled_binutils=0 \
+        -Dlinux_use_debug_fission=0 \
+        "
 
 # Set this variable with the path of your chromium checkout after
 # running gclient sync.
