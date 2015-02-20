@@ -161,7 +161,7 @@ python() {
 do_configure() {
 	cd ${S}
 	GYP_DEFINES="${GYP_DEFINES}" export GYP_DEFINES
-	GYP_GENERATOR_FLAGS="output_dir=${CHROMIUM_OUT_DIR}"
+	export GYP_GENERATOR_FLAGS="output_dir=${CHROMIUM_OUT_DIR}"
 	# replace LD with CXX, to workaround a possible gyp issue?
 	LD="${CXX}" export LD
 	CC="${CC}" export CC
@@ -173,7 +173,7 @@ do_configure() {
 
 do_compile() {
 	# build with ninja
-	ninja -C ${S}/${CHROMIUM_OUT_DIR}/Release chrome chrome_sandbox
+	ninja -C ${S}/${CHROMIUM_OUT_DIR}/Release ${PARALLEL_MAKE} chrome chrome_sandbox
 }
 
 do_install() {
@@ -196,6 +196,7 @@ do_install() {
 	install -m 0644 ${S}/${CHROMIUM_OUT_DIR}/Release/chrome_100_percent.pak ${D}${bindir}/chrome/
 	install -m 0644 ${S}/${CHROMIUM_OUT_DIR}/Release/product_logo_48.png ${D}${bindir}/chrome/
 	install -m 0755 ${S}/${CHROMIUM_OUT_DIR}/Release/libffmpegsumo.so ${D}${bindir}/chrome/
+	install -m 0755 ${S}/${CHROMIUM_OUT_DIR}/Release/*.bin ${D}${bindir}/chrome/
 
 	# Always adding this libdir (not just with component builds), because the
 	# LD_LIBRARY_PATH line in the google-chromium script refers to it
