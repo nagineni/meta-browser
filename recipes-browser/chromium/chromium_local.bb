@@ -89,8 +89,6 @@ COMPATIBLE_MACHINE_armv7a = "(.*)"
 
 inherit gettext
 
-PACKAGECONFIG ??= "use-egl"
-
 # this makes sure the dependencies for the EGL mode are present; otherwise, the configure scripts
 # automatically and silently fall back to GLX
 PACKAGECONFIG[use-egl] = ",,virtual/egl virtual/libgles2"
