@@ -127,7 +127,7 @@ S = "${CHROMIUM_LOCAL_PATH}"
 # These are present as their own variables, since they have changed between versions
 # a few times in the past already; making them variables makes it easier to handle that
 CHROMIUM_WAYLAND_DEPENDS = "wayland libxkbcommon"
-CHROMIUM_WAYLAND_GYP_DEFINES = "use_ash=1 use_aura=1 chromeos=0 use_ozone=1 use_xkbcommon=1 proprietary_codecs=1 ffmpeg_branding=Chrome"
+CHROMIUM_WAYLAND_GYP_DEFINES = "use_ash=1 use_aura=1 chromeos=0 use_ozone=1 use_xkbcommon=1 proprietary_codecs=1 ffmpeg_branding='Chrome' "
 
 python() {
     if d.getVar('ENABLE_WAYLAND', True) == '1':
