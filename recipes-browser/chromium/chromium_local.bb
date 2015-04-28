@@ -115,6 +115,9 @@ ARMFPABI_armv7a = "${@bb.utils.contains('TUNE_FEATURES', 'callconvention-hard', 
 
 CHROMIUM_EXTRA_ARGS ?= " \
 	${@bb.utils.contains('PACKAGECONFIG', 'use-egl', '--use-gl=egl', '', d)} \
+	--incognito \
+	--no-sandbox \
+	--ignore-gpu-blacklist \
 "
 
 GYP_DEFINES = "${ARMFPABI} release_extra_cflags='-Wno-error=unused-local-typedefs' sysroot=''"
