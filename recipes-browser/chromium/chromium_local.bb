@@ -23,6 +23,7 @@ SRC_URI = "\
         file://oe-defaults.gypi \
         ${@bb.utils.contains('PACKAGECONFIG', 'component-build', 'file://component-build.gypi', '', d)} \
         file://chromium-43/0004-Remove-hard-coded-values-for-CC-and-CXX.patch \
+        file://chromium-43/0003-Disable-API-keys-info-bar.patch \
         file://unistd-2.patch \
         file://google-chrome \
         file://google-chrome.desktop \
