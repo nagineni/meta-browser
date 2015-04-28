@@ -1,7 +1,7 @@
 [shell]
 background-image=/usr/share/weston/background.png
 background-color=0xff002244
-locking=true
+locking=false
 animation=zoom
 
 [launcher]
