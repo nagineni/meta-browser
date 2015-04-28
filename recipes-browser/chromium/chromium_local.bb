@@ -93,7 +93,7 @@ inherit gettext
 # automatically and silently fall back to GLX
 PACKAGECONFIG[use-egl] = ",,virtual/egl virtual/libgles2"
 
-EXTRA_OEGYP =	" \
+CHROMIUM_EXTRA_OEGYP +=	" \
 	-Dlinux_use_bundled_binutils=0 \
 	-Dlinux_use_debug_fission=0 \
 	-Dangle_use_commit_id=0 \
@@ -148,7 +148,7 @@ do_configure() {
 	CXX="${CXX}" export CXX
 	CC_host="${BUILD_CC}" export CC_host
 	CXX_host="${BUILD_CXX}" export CXX_host
-	build/gyp_chromium --depth=. ${EXTRA_OEGYP}
+	build/gyp_chromium --depth=. ${CHROMIUM_EXTRA_OEGYP}
 }
 
 do_compile() {
