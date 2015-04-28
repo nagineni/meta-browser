@@ -11,3 +11,6 @@ path=/usr/bin/weston-terminal
 [launcher]
 icon=/usr/share/weston/product_logo_24.png
 path=/usr/bin/google-chrome
+
+[screensaver]
+duration=0
