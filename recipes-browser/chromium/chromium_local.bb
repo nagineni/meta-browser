@@ -16,7 +16,7 @@
 LIC_FILES_CHKSUM = "file://LICENSE;md5=537e0b52077bf0a616d0a0c8a79bc9d5"
 DESCRIPTION = "Chromium browser"
 LICENSE = "BSD"
-DEPENDS = "xz-native pciutils pulseaudio cairo nss zlib-native libav cups ninja-native gconf libexif pango libdrm"
+DEPENDS = "xz-native pciutils pulseaudio cairo nss zlib-native libav cups ninja-native gconf libexif pango libdrm mesa"
 RDEPENDS_chromium += "alsa-utils libegl-mesa libglapi libgles1-mesa libgles2-mesa mesa-megadriver libva libgbm libva-wayland"
 SRC_URI = "\
         file://include.gypi \
