@@ -55,6 +55,7 @@ ENABLE_WAYLAND = "${@base_contains('DISTRO_FEATURES', 'wayland', '1', '0', d)}"
 OZONE_WAYLAND_EXTRA_PATCHES += " \
         file://chromium-43/0005-Remove-X-libraries-from-GYP-files.patch \
         file://chromium-43/0006-disable-libsecret.patch \
+        file://chromium-43/0014-Open-VA-driver-inside-the-sandbox.patch \
 "
 
 # using 00*.patch to skip the WebRTC patches in ozone-wayland
@@ -117,7 +118,6 @@ ARMFPABI_armv7a = "${@bb.utils.contains('TUNE_FEATURES', 'callconvention-hard', 
 CHROMIUM_EXTRA_ARGS ?= " \
 	${@bb.utils.contains('PACKAGECONFIG', 'use-egl', '--use-gl=egl', '', d)} \
 	--incognito \
-	--no-sandbox \
 	--ignore-gpu-blacklist \
 "
 
